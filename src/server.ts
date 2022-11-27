@@ -24,9 +24,7 @@ server.use(mainRoutes)
 
 //Configuração página não encontrada 404
 server.use((req, res) => {
-    res.send('Página não encontrada')
+    res.render("pages/404")
 })
-
-
 //Inicializar o servidor na porta definida no .env
 server.listen(process.env.PORT)
