@@ -1,4 +1,8 @@
-[
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Pet = void 0;
+//Simular um banco de dados com um array dos cadastros
+const data = [
     {
         type: 'dog',
         image: 'pastor-alemao.jpg',
@@ -118,4 +122,17 @@
         color: 'Preto',
         sex: 'Masculino'
     },
-]
+];
+exports.Pet = {
+    getAll: () => {
+        return data;
+    },
+    getfromType: (type) => {
+        return data.filter(item => {
+            return (item.type === type);
+        });
+    },
+    getFromName: (name) => {
+        return data.filter(item => item.name.toLowerCase().indexOf(name.toLowerCase()) > -1);
+    }
+};
